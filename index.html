@@ -1873,7 +1873,49 @@
     padding: 70px 20px;
     background: #fff;
 }
+/* Sound Toggle Button Styling */
+.sound-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10; /* Ensures it sits on top of the overlay */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
 
+.sound-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.sound-btn i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Responsive: Move button on mobile */
+@media (max-width: 768px) {
+    .sound-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .sound-btn i {
+        font-size: 16px;
+    }
+}
 .banquet-hall-inner {
     display: flex;
     align-items: center;
@@ -2401,108 +2443,7 @@
 
 <body class="home wp-singular page-template page-template-template-parts page-template-homepage page-template-template-partshomepage-php page page-id-6 wp-custom-logo wp-embed-responsive wp-theme-arthotel singular enable-search-modal has-post-thumbnail has-no-pagination not-showing-comments show-avatars homepage footer-top-visible">
 
-    <header class="navbar navbar-expand-xl">
-        <div class="container custom_container">
-            <div class="site-logo faux-heading">
-                <!--<a href="https://arthotelng.com/" class="custom-logo-link" rel="home" aria-current="page">
-                    <img width="140" height="127" src="https://arthotelng.com/wp-content/uploads/2024/12/website-logo-2.jpg" class="custom-logo" alt="The Art Hotel Limited" decoding="async"/>
-                </a>-->
-                <span class="screen-reader-text">The Art Hotel Limited</span>
-            </div>
-            <!-- <button class="navbar-toggler" id="header-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            					    <span class="navbar-toggler-icon"></span>
-            					</button> -->
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                        <a href="https://arthotelng.com/rooms-suites/">Rooms &#038; Suites</a>
-                    </li>
-                    <li id="menu-item-1417" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1417">
-                        <a href="#">Dining</a>
-                        <span class="icon"></span>
-                        <ul class="sub-menu">
-                            <li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-41">
-                                <a href="https://arthotelng.com/mist-restaurant/">Mist Restaurant</a>
-                                <span class="icon"></span>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-359">
-                                        <a href="https://arthotelng.com/mist-restaurant-menu/">Mist Dining</a>
-                                    </li>
-                                    <li id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379">
-                                        <a href="https://arthotelng.com/mist-bar/">Mist Bar</a>
-                                    </li>
-                                    <li id="menu-item-1848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1848">
-                                        <a href="https://arthotelng.com/afternoon-tea/">Afternoon Tea</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40">
-                                <a href="https://arthotelng.com/cloud-terrace/">Cloud Terrace</a>
-                            </li>
-                            <li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439">
-                                <a href="https://arthotelng.com/in-room-dining/">In Room Dining</a>
-                            </li>
-                            <li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421">
-                                <a href="https://arthotelng.com/late-night-munchies/">Late Night Munchies</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37">
-                        <a href="https://arthotelng.com/meetings-events/">Meetings &#038; Events</a>
-                    </li>
-                    <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36">
-                        <a href="https://arthotelng.com/gym/">Gym</a>
-                    </li>
-                    <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38">
-                        <a href="https://arthotelng.com/art-gallery/">Art Gallery</a>
-                    </li>
-                    <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35">
-                        <a href="https://arthotelng.com/offers/">Offers</a>
-                    </li>
-                    <li id="menu-item-2986" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2986">
-                        <a href="#">Resources</a>
-                        <span class="icon"></span>
-                        <ul class="sub-menu">
-                            <li id="menu-item-2990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2990">
-                                <a href="https://arthotelng.com/blog/">Blog &#038; Press</a>
-                            </li>
-                            <li id="menu-item-3043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3043">
-                                <a href="https://arthotelng.com/newsletter/">Newsletter</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="menu-item-2233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2233">
-                        <a href="https://arthotelng.com/polo-caps/">Polo Caps</a>
-                    </li>
-                    <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33">
-                        <a href="https://arthotelng.com/contact/">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="right__menu">
-                <div class="widget widget_block">
-                    <div class="widget-content">
-                        <h6 class="wp-block-heading"></h6>
-                    </div>
-                </div>
-                <div class="widget widget_block">
-                    <div class="widget-content">
-                        <a href="https://www.facebook.com/arthotelng" target="_blank">
-                            <img decoding="async" loading="lazy" src="http://arthotelng.com/wp-content/uploads/2022/03/fv-1.png" alt="" class="wp-image-49" width="12" height="22">
-                        </a>
-                        <a href="https://www.instagram.com/art.hotelng" target="_blank">
-                            <img decoding="async" loading="lazy" src="http://arthotelng.com/wp-content/uploads/2022/03/insta-1.png" alt="" class="wp-image-50" width="25" height="25">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    
     <div style="position: absolute; left: -876204155px;">
         <a href="https://arthotelng.com/bonus-online-casino-osterreich-ohne-einzahlung-besonderheiten-und-warum-sie-darauf-achten-sollten/">Bonus Online Casino Österreich ohne Einzahlung</a>
     </div>
@@ -2511,7 +2452,9 @@
     <section class="video-banner-section">
         <div class="video-background-container">
             <video class="banner-video" autoplay muted loop playsinline preload="auto" poster="">
-                <source src="https://raw.githubusercontent.com/DannyYo696/svillage/d5c7facedfda3110eda2a6d7d6709c37d31b3f62/Experience%20the%20beauty%20of%20refined%20hospitality%20at%20The%20Art%20Hotel%20Lagos%E2%80%94a%205-star%20escape%20where%20luxury.mp4" type="video/mp4">
+                <source src="/bs.mp4
+
+" type="video/mp4">
 
                             Your browser does not support the video tag.
                         
@@ -2519,11 +2462,15 @@
             <div class="video-overlay"></div>
         </div>
 
+        <button id="sound-toggle" class="sound-btn" aria-label="Toggle Sound">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+
         <!-- Banner Content -->
         <div class="banner-content">
             <div class="container">
-                <h1 class="banner-title">Welcome to the most luxurious hotel in Lagos, The Art Hotel Lagos</h1>
-                <p class="banner-subtitle">We’re your 5-star luxury hotel in Victoria Island, Lagos, where comfort, art, and service go beyond expectations. We know you want more than just a place to sleep, great art, comfort, relaxation, a feeling you can’t quite name, and we’ve got you!
+                <h1 class="banner-title">Welcome to the most luxurious hotel in Ibadan, The Highfield Hotel</h1>
+                <p class="banner-subtitle">We’re your 5-star luxury hotel in Jericho, Ibadan, where comfort, art, and service go beyond expectations. We know you want more than just a place to sleep, great art, comfort, relaxation, a feeling you can’t quite name, and we’ve got you!
                 </p>
                 <div class="banner-buttons">
                     <a href="https://direct-book.com/properties/thearthoteldirect?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2025-09-30&checkOutDate=2025-10-01&trackPage=yes" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Stay With Us</a>
@@ -2811,21 +2758,48 @@
     document.addEventListener('DOMContentLoaded', function() {
         const video = document.querySelector('.banner-video');
         const videoSection = document.querySelector('.video-banner-section');
+        const soundBtn = document.getElementById('sound-toggle');
+        const soundIcon = soundBtn.querySelector('i');
 
-        // Ensure video plays on mobile
+        // 1. Handle Video Autoplay & Speed
         if (video) {
+            // --- ADDED THIS LINE TO SLOW DOWN THE VIDEO ---
+            // 1.0 is normal speed. 0.5 is half speed. 0.75 is slightly slower.
+            video.playbackRate = 0.5; 
+            // ----------------------------------------------
+
             video.play().catch(function(error) {
                 console.log('Video autoplay failed:', error);
             });
 
-            // Restart video when it ends (backup for loop attribute)
             video.addEventListener('ended', function() {
                 video.currentTime = 0;
                 video.play();
             });
         }
 
-        // Adjust height for mobile browsers with address bar
+        // 2. Handle Sound Toggle
+        if (soundBtn && video) {
+            soundBtn.addEventListener('click', function() {
+                if (video.muted) {
+                    // Unmute
+                    video.muted = false;
+                    // Change icon to Volume Up
+                    soundIcon.classList.remove('fa-volume-mute');
+                    soundIcon.classList.add('fa-volume-up');
+                    // Optional: Set volume level (0 to 1)
+                    video.volume = 0.5; 
+                } else {
+                    // Mute
+                    video.muted = true;
+                    // Change icon to Mute
+                    soundIcon.classList.remove('fa-volume-up');
+                    soundIcon.classList.add('fa-volume-mute');
+                }
+            });
+        }
+
+        // 3. Adjust height for mobile browsers
         function setVideoHeight() {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -2835,21 +2809,17 @@
             }
         }
 
-        // Set initial height
         setVideoHeight();
-
-        // Adjust on resize and orientation change
         window.addEventListener('resize', setVideoHeight);
         window.addEventListener('orientationchange', function() {
             setTimeout(setVideoHeight, 100);
         });
 
-        // Optimize video for mobile
         if (window.innerWidth <= 767) {
             video.setAttribute('preload', 'metadata');
         }
     });
-    </script>
+</script>
 
     <!-- Video Banner Section -->
 
